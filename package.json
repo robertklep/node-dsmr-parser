@@ -5,6 +5,7 @@
   "main": "index.js",
   "author": "Robert Klep <robert@klep.name>",
   "license": "MIT",
+  "repository" : "robertklep/node-dsmr-parser",
   "dependencies": {
     "crc": "^3.4.0"
   }
