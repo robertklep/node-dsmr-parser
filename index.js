@@ -32,19 +32,19 @@ const object_patterns = {
     pattern   : /^0-0:96\.13\.0\(([0-9a-f]+)\)$/mi,
     transform : utils.parseHex
   },
-  'electricity received tariff 1' : {
+  'electricity delivered tariff 1' : {
     pattern   : /^1-0:1\.8\.1\(([0-9.]+)/m,
     transform : Number
   },
-  'electricity received tariff 2' : {
+  'electricity delivered tariff 2' : {
     pattern   : /^1-0:1\.8\.2\(([0-9.]+)/m,
     transform : Number
   },
-  'electricity delivered tariff 1' : {
+  'electricity received tariff 1' : {
     pattern   : /^1-0:2\.8\.1\(([0-9.]+)/m,
     transform : Number
   },
-  'electricity delivered tariff 2' : {
+  'electricity received tariff 2' : {
     pattern   : /^1-0:2\.8\.2\(([0-9.]+)/m,
     transform : Number
   },
@@ -116,38 +116,37 @@ const object_patterns = {
     pattern   : /^1-0:71\.7\.0\(([0-9.]+)/m,
     transform : Number
   },
-  'instantaneous active power L1 (+P)' : {
+  'instantaneous active power L1 delivered' : {
     pattern   : /^1-0:21\.7\.0\(([0-9.]+)/m,
     transform : Number
   },
-  'instantaneous active power L2 (+P)' : {
+  'instantaneous active power L2 delivered' : {
     pattern   : /^1-0:41\.7\.0\(([0-9.]+)/m,
     transform : Number
   },
-  'instantaneous active power L3 (+P)' : {
+  'instantaneous active power L3 delivered' : {
     pattern   : /^1-0:61\.7\.0\(([0-9.]+)/m,
     transform : Number
   },
-  'instantaneous active power L1 (-P)' : {
+  'instantaneous active power L1 received' : {
     pattern   : /^1-0:22\.7\.0\(([0-9.]+)/m,
     transform : Number
   },
-  'instantaneous active power L2 (-P)' : {
+  'instantaneous active power L2 received' : {
     pattern   : /^1-0:42\.7\.0\(([0-9.]+)/m,
     transform : Number
   },
-  'instantaneous active power L3 (-P)' : {
+  'instantaneous active power L3 received' : {
     pattern   : /^1-0:62\.7\.0\(([0-9.]+)/m,
     transform : Number
   },
+  'gas timestamp' : {
+    pattern   : /^0-[0-9]+:24\.2\.1\(([0-9.]+[WS])\)/m,
+    transform : utils.parseTimestamp
+  },
   'gas delivered' : {
-    pattern   : /^0-[0-9]+:24\.2\.1\(([0-9.]+[WS])\)\(([0-9.]+)/m,
-    transform : (timestamp, m3) => {
-      return {
-        timestamp : utils.parseTimestamp(timestamp),
-        amount    : Number(m3),
-      };
-    }
+    pattern   : /^0-[0-9]+:24\.2\.1\([0-9.]+[WS]\)\(([0-9.]+)/m,
+    transform : Number
   },
 };
 
