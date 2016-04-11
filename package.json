@@ -1,11 +1,11 @@
 {
   "name": "dsmr-parser",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Parser for DSMR (Dutch Smart Meter Requirements) data exchange protocol",
   "main": "index.js",
   "author": "Robert Klep <robert@klep.name>",
   "license": "MIT",
-  "repository" : "robertklep/node-dsmr-parser",
+  "repository": "robertklep/node-dsmr-parser",
   "dependencies": {
     "crc": "^3.4.0"
   }
