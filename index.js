@@ -183,7 +183,7 @@ Telegram.prototype.parse = function() {
 
 Telegram.prototype.checksum = function() {
   var data = this.telegram.match(patterns.CHECKSUM)[1];
-  return crc.crc16(data).toString(16).toUpperCase();
+  return ('0000' + crc.crc16(data).toString(16)).slice(-4).toUpperCase();
 }
 
 Telegram.prototype.parseObjects = function(data) {
