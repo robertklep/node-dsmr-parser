@@ -1,6 +1,6 @@
 # DSMR parser
 
-Quick and dirty DSMR ([Dutch Smart Meter Requirements](http://www.netbeheernederland.nl/themas/dossier/documenten/?pageindex=3)) parser.
+Quick and dirty DSMR ([Dutch Smart Meter Requirements](http://www.netbeheernederland.nl/themas/dossier/documenten/?pageindex=3)) parser. Will only parse DSMRv4 telegrams (not DSMRv3 or older).
 
 ## Installation
 
