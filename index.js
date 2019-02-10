@@ -161,7 +161,7 @@ const object_patterns = {
     transform: Number
   },
   'instantaneous imported reactive power (Q+)': {
-    pattern: /^1-0:4\.7\.0\(([0-9.]+)/m,
+    pattern: /^1-0:3\.7\.0\(([0-9.]+)/m,
     transform: Number
   },
   'instantaneous exported reactive power (Q-)': {
