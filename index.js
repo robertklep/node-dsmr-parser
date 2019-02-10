@@ -148,6 +148,42 @@ const object_patterns = {
     pattern   : /^0-[0-9]+:24\.2\.1\([0-9.]+[WS]\)\(([0-9.]+)/m,
     transform : Number
   },
+  'logical device name': {
+    pattern: /^0-0:42\.0\.0\(([0-9.]+)/m,
+    transform: String
+  },
+  'total imported energy register (Q+)': {
+    pattern: /^1-0:3\.8\.0\(([0-9.]+)/m,
+    transform: Number
+  },
+  'total exported energy register (Q-)': {
+    pattern: /^1-0:4\.8\.0\(([0-9.]+)/m,
+    transform: Number
+  },
+  'instantaneous imported reactive power (Q+)': {
+    pattern: /^1-0:4\.7\.0\(([0-9.]+)/m,
+    transform: Number
+  },
+  'instantaneous exported reactive power (Q-)': {
+    pattern: /^1-0:4\.7\.0\(([0-9.]+)/m,
+    transform: Number
+  },
+  'actual theshold electricity in kW': {
+    pattern: /^0-0:17\.0\.0\(([0-9.]+)/m,
+    transform: Number
+  },
+  'switch position electricity' : {
+    pattern   : /^0-0:96\.3\.10\(([0-9.]+)/m,
+    transform : Number
+  },
+  'electricity received tariff 0' : {
+    pattern   : /^1-0:2\.8\.0\(([0-9.]+)/m,
+    transform : Number
+  },
+  'electricity delivered tariff 0' : {
+    pattern   : /^1-0:1\.8\.0\(([0-9.]+)/m,
+    transform : Number
+  },  
 };
 
 module.exports = {
