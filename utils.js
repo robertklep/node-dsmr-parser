@@ -1,6 +1,6 @@
 module.exports = {
   parseHex(v) {
-    return new Buffer(v, 'hex').toString();
+    return Buffer.from(v, 'hex').toString();
   },
   parseTimestamp(v) {
     var match = /^(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})[SW]$/.exec(v);

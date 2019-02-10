@@ -7,6 +7,6 @@
   "license": "MIT",
   "repository": "robertklep/node-dsmr-parser",
   "dependencies": {
-    "crc": "^3.4.0"
+    "crc": "^3.8.0"
   }
 }
