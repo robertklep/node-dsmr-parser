@@ -156,8 +156,24 @@ const object_patterns = {
     pattern: /^1-0:3\.8\.0\(([0-9.]+)/m,
     transform: Number
   },
+  'total imported energy register (Q+) tariff 1': {
+    pattern: /^1-0:3\.8\.1\(([0-9.]+)/m,
+    transform: Number
+  },
+  'total imported energy register (Q+) tariff 2': {
+    pattern: /^1-0:3\.8\.2\(([0-9.]+)/m,
+    transform: Number
+  },
   'total exported energy register (Q-)': {
     pattern: /^1-0:4\.8\.0\(([0-9.]+)/m,
+    transform: Number
+  },
+  'total exported energy register (Q-) tariff 1': {
+    pattern: /^1-0:4\.8\.1\(([0-9.]+)/m,
+    transform: Number
+  },
+  'total exported energy register (Q-) tariff 2': {
+    pattern: /^1-0:4\.8\.2\(([0-9.]+)/m,
     transform: Number
   },
   'instantaneous imported reactive power (Q+)': {
