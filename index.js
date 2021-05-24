@@ -260,7 +260,7 @@ Telegram.prototype.parseObjects = function(data, parseMode) {
         value: obj.transform ? obj.transform.apply(obj, match.slice(valueIdx, valueIdx + 1)) : match[valueIdx],
         unit: match.length > 5 ? match[5] : null,
       };
-      if ((parseMode & ParseTypes.TextBased) != 0) objectsByText[key] = parsed;
+      if ((parseMode & ParseTypes.TextBased) != 0 || key == 'timestamp') objectsByText[key] = parsed;
       if ((parseMode & ParseTypes.NumericIDs) != 0) objectsById[match[1]] = parsed;
       processed = true;
     });
