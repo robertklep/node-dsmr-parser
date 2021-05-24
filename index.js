@@ -1,7 +1,7 @@
 const crc   = require('crc');
 const utils = require('./utils');
 
-const ParseTypes = Object.freeze({"TextBased": 1, "NumericIDs":2});
+const ParseTypes = Object.freeze({"TextBased": 1, "NumericIDs":2, "ReadUnits": 8 });
 
 // Common patterns.
 const patterns = {
@@ -256,7 +256,9 @@ Telegram.prototype.parseObjects = function(data, parseMode) {
 
       if (! match) return;
       var valueIdx = match.length > 5 ? 3 : 2;
-      var parsed = {
+      var parsed = (parseMode & ParseTypes.ReadUnits) == 0
+        ? obj.transform ? obj.transform.apply(obj, match.slice(valueIdx, valueIdx + 1)) : match[valueIdx]
+        : {
         value: obj.transform ? obj.transform.apply(obj, match.slice(valueIdx, valueIdx + 1)) : match[valueIdx],
         unit: match.length > 5 ? match[5] : null,
       };
@@ -268,7 +270,7 @@ Telegram.prototype.parseObjects = function(data, parseMode) {
     if ((parseMode & ParseTypes.NumericIDs) != 0) {
       var matches = /^([0-9]+-[0-9]+:[0-9.]+)\((.+)\)$/m.exec(line);
       if (!matches) return;
-      objectsById[matches[1]] = { value: matches[2].split(')(') }
+      objectsById[matches[1]] = (parseMode & ParseTypes.ReadUnits) == 0 ? matches[2].split(')(') : { value: matches[2].split(')(') }
     }
 
   })
