@@ -116,6 +116,18 @@ const object_patterns = {
     pattern   : /^1-0:71\.7\.0\(([0-9.]+)/m,
     transform : Number
   },
+  'current average demand' : {
+    pattern   : /^1-0:1\.4\.0\(([0-9.]+)/m,
+    transform : Number
+  },
+  'maximum demand timestamp' : {
+    pattern   : /^1-0:1\.6\.0\(([0-9.]+[WS])\)/m,
+    transform : utils.parseTimestamp
+  },
+  'maximum demand' : {
+    pattern   : /^1-0:1\.6\.0\([0-9.]+[WS]\)\(([0-9.]+)/m,
+    transform : Number
+  },
   'instantaneous active power L1 delivered' : {
     pattern   : /^1-0:21\.7\.0\(([0-9.]+)/m,
     transform : Number
