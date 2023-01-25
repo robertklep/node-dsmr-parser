@@ -1,6 +1,6 @@
 {
   "name": "dsmr-parser",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "Parser for DSMR (Dutch Smart Meter Requirements) data exchange protocol",
   "main": "index.js",
   "author": "Robert Klep <robert@klep.name>",
